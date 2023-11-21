@@ -1,0 +1,43 @@
+for i in range(1, len(stock_prices)):
+    daily_return = (stock_prices[i] - stock_prices[i-1]) / stock_prices[i-1]
+    print(daily_return)
+
+principal = 500
+rate = 0.07  # 7% annual interest
+years = 0
+
+while principal < 1000:
+    principal *= (1 + rate)
+    years += 1
+
+print(years)
+
+
+principal = 500
+rate = 0.07  # 7% annual interest
+years = 0
+
+while principal < 1000:
+    principal *= (1 + rate)
+    years += 1
+    final_value= principal
+    print(final_value)
+
+
+bond_yield = 3.8
+if bond_yield > 4.0: 
+   print ("Buy the bond.")
+elif bond_yield == 4.0:
+    print("Buy the bond.")
+else:
+    print("Do not buy the bond.")
+Do not buy the bond.
+
+pe_ratio = 17                           # code refait tout seule tout est compris normalement, j'avais juste un problème au début avec le range(1, len(cours_bousrier) mais c'est bon normalement
+if 14 <= pe_ratio <= 16:
+   print("Buy the stock.")
+elif 23 <= pe_ratio <= 27:
+   print("Sell the stock.")
+else:
+   print("Hold the stock.")
+Hold the stock.
