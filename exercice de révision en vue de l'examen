@@ -1,0 +1,216 @@
+
+"currency exchange, we want to create variables to store the following information about a currency exchange rate"
+currency_pair = "EUR/USD"
+buying_rate = 1.1825
+selling_rate = 1.1830
+print(selling_rate,currency_pair,buying_rate)
+
+
+# Define variables for currency exchange rate information
+currency_pair = "EUR/USD"
+buying_rate = 1.1825
+selling_rate = 1.1830
+
+# Print each of the variables
+print("Currency Pair:", currency_pair)
+print("Buying Rate:", buying_rate)
+print("Selling Rate:", selling_rate)
+
+stock_list = ["TSLA","AMZN","FB"]
+stock_list.append("NVDA")
+stock_list.append("AMD")
+print(stock_list)
+
+
+
+# Define a dictionary for bond details
+bond_details = {
+    "Issuer": "ABC Corporation",
+    "Maturity Date": "2030-12-31",
+    "Coupon Rate": 0.35,
+    "Face Value": 10000
+}
+
+# Print the contents of the dictionary
+print("Bond Details:")
+for key, value in bond_details.items():
+    print(f"{key}: {value}")
+
+# Given list of stock prices
+stock_prices = [105, 107, 104, 106, 103]
+
+# Calculate daily returns and print them
+print("Daily Returns:")
+total_return = 0
+
+for i in range(1, len(stock_prices)):
+    daily_return = (stock_prices[i] - stock_prices[i - 1]) / stock_prices[i - 1]
+    total_return += daily_return
+    print(f"Day {i}: {daily_return * 100:.2f}%")
+
+# Calculate and print the average return
+average_return = total_return / (len(stock_prices) - 1)
+print(f"\nAverage Return: {average_return * 100:.2f}%")
+
+principal = 500
+rate = 0.07
+years= 0
+while principal < 1000:
+    principal *= (1+ rate)
+    years += 1
+print(principal)
+
+
+
+bond_yield = 3.8
+if bond_yield >= 4.0:
+    print("buy the bond")
+else:
+    print("do not but the bond")
+
+pe_ratio = 17
+if 14 <= pe_ratio <= 16:
+    print ("buy the stock")
+elif pe_ratio > 25:
+    print ("sell the stock")
+else:
+    print ("hold the stock")
+
+# Exercise 4: Modify trading strategy to consider buying if P/E ratio is between 14 and 16, and selling if it's between 23 and 27
+pe_ratio = 17
+
+if 14 <= pe_ratio <= 16:
+    print("Buy the stock.")
+elif 23 <= pe_ratio <= 27:
+    print("Sell the stock.")
+else:
+    print("Hold the stock.")
+
+for number in range(18, 23):
+    print(number)
+
+
+class Stock:
+    def __init__(self, name, price, dividend):
+        self.name = name
+        self.price = price
+        self.dividend = dividend
+
+    def yield_dividend(self):
+        return self.dividend / self.price
+
+# Create an instance of the Stock class
+apple_stock = Stock("Apple", 150, 0.82)
+
+# Print the dividend yield for the Apple stock
+print(apple_stock.yield_dividend())
+
+
+budget = 1000
+stock_price = 100
+share_buy = 0
+while budget > 0:
+    budget -= 100
+    share_buy +=1
+print(share_buy)
+
+# Constants
+stock_price = 100
+initial_budget = 1000
+
+# Variables
+budget = initial_budget
+shares_bought = 0
+
+# Simulate buying one share per day until the budget is depleted
+while budget >= stock_price:
+    budget -= stock_price  # Deduct the stock price from the budget
+    shares_bought += 1     # Increment the number of shares bought
+
+# Print the total number of shares bought
+print("Total number of shares bought:", shares_bought)
+
+
+
+annual_interest = [0.2, 0.3, 0.4, 0.5, 0.6]
+principal = 1000
+years = 0
+for interest_rate in annual_interest:
+    principal *= (1 + interest_rate)
+    years += 1
+print(principal)
+
+# List of five different annual interest rates (as decimals)
+annual_interest_rates = [0.02, 0.03, 0.05, 0.08, 0.1]
+
+# Initial investment
+initial_investment = 1000
+
+# Calculate and print the final value after one year at each interest rate
+for interest_rate in annual_interest_rates:
+    final_value = initial_investment * (1 + interest_rate)
+    print (final_value)
+
+class Stock:
+    def __init__(self, ticker_symbol, base_price, current_price):
+        self.ticker_symbol = ticker_symbol
+        self.base_price = base_price
+        self.current_price = current_price
+
+    def change_price(self):
+        return self.current_price / self.base_price
+
+# Creating an instance of the Stock class
+apple_stock = Stock("APL", 98, 103)
+
+# Accessing the change_price method and printing the result
+print(apple_stock.change_price())
+
+class Stock:
+    def __init__(self, ticker_symbol, base_price, current_price):
+        self.ticker_symbol = ticker_symbol
+        self.base_price = base_price
+        self.current_price = current_price
+
+    def percentage_change(self):
+        return ((self.current_price - self.base_price) / self.base_price) * 100
+
+# Example usage:
+# Creating an instance of the Stock class
+apple_stock = Stock("APL", 98, 103)
+
+# Accessing the percentage_change method and printing the result
+print(f"Percentage Change: {apple_stock.percentage_change():.2f}%")
+
+import numpy as np
+
+# Create a NumPy array representing the stock prices
+stock_prices = np.array([150, 152, 148, 155, 160, 158, 153, 157, 155, 162])
+
+# Calculate and print the average, highest, and lowest prices
+average_price = np.mean(stock_prices)
+highest_price = np.max(stock_prices)
+lowest_price = np.min(stock_prices)
+
+print(f"Average Price: {average_price:.2f}")
+print(f"Highest Price: {highest_price}")
+print(f"Lowest Price: {lowest_price}")
+
+import numpy as np
+
+# Set initial parameters
+initial_price = 100
+trading_days = 252
+mean_return = 0  # Daily return mean (0%)
+std_dev_return = 0.01  # Daily return standard deviation (1%)
+
+# Simulate daily returns using a normal distribution
+daily_returns = np.random.normal(mean_return, std_dev_return, trading_days)
+
+# Calculate cumulative returns and stock prices
+cumulative_returns = np.cumsum(daily_returns)
+stock_prices = initial_price * np.exp(cumulative_returns)
+
+# Print the final stock price at the end of the year
+final_price = stock_prices[-1]
+print(f"Final Stock Price at the End of the Year: ${final_price:.2f}")
