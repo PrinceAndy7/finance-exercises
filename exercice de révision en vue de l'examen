@@ -1,3 +1,6 @@
+# Note à moi même :les codes suivants sont extraits des codes laissés et réussi à récuper sur mon Pycharm, ayant changé d'ordinateur malheureusement j'ai perdu plusieurs traces de programmes que j'avais fait. Mais l'important est que je sais maintenant mieux coder qu'avant, preuv j'ai réussi à faire pas mal de codes tout seul
+
+# début des exercices de révisions
 
 "currency exchange, we want to create variables to store the following information about a currency exchange rate"
 currency_pair = "EUR/USD"
