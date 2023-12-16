@@ -1,0 +1,26 @@
+# Write a Python function to calculate the average stock price over these days
+
+dates = ["4th January", "5th January", "6th January"]
+stock_prices = [155, 156, 153]
+def calculate_average(prices):
+return sum(prices) / len(prices)
+average_price = calculate_average(stock_prices)
+print(f"Average Stock Price: ${average_price}")
+
+# we need to Write a Python function to calculate the volatility (standard deviation) of some stock prices
+
+dates = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+stock_prices = [150, 152, 151, 153, 152]
+import statistics
+def calculate_volatility(prices):
+return statistics.stdev(prices)
+volatility = calculate_volatility(stock_prices)
+print(f"Volatility: ${volatility}")
+
+# example of code to calculate the present value 
+
+future_value = 500  
+discount_rate = 0.06 
+number_of_periods = 2 
+present_value = future_value / (1 + discount_rate) ** number_of_periods
+print(f"The present value is: ${present_value:.2f}")
