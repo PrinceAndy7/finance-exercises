@@ -1,0 +1,38 @@
+#  Put-Call Parity example of a way to calculate this on python
+
+import math
+call_price = 1.85
+strike_price = 14.5
+interest_rate = 0.0525
+time_to_maturity = 0.75
+put_price = call_price + strike_price * math.exp(-interest_rate * time_to_maturity)
+put_price_rounded = round(put_price, 2)
+print(f"The calculated put option price is: {put_price_rounded} USD")
+
+# try to calculate the new price if the yield go down by 21 point 
+
+import numpy as np
+coupon = 0.05 / 2  # semi-annual coupon
+yield_per_period = 0.06 / 2  # semi-annual yield
+n_periods = 15 * 2  # 15 years with semi-annual compounding
+modified_duration = 10.3145
+price = 0.949377
+change_in_yield = -0.0021  # 21 basis points
+new_price = price * (1 - modified_duration * change_in_yield)
+print("New price:", new_price)
+
+# risk neutral probability of the call 
+
+import numpy as np
+s0 = 3677      #  this is the spot price 
+k = 3700       # here the stok price 
+r = 0.0525
+sigma = 0.24   # sigma mean the volatility
+t = 5 / 12  # 5 months in years
+delta = 0.571
+implied_volatility = np.sqrt((delta * np.log(s0 / k) - r * t) / (t * s0 * sigma * sigma))
+q = np.exp(-r * t)
+pnm = 0.5 + 0.5 * implied_volatility / sigma
+print("Risk-neutral probability:", pnm)                    # for the end of the code I used chatgpt and the teacher help me because I had did a mathematics error so it was important to correct this
+
+
